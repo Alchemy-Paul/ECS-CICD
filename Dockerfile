@@ -5,16 +5,13 @@ FROM python:3.10
 WORKDIR /app
 
 # Copy the application files
-COPY . . 
+COPY . .
 
-# Install dependencies
-RUN pip install flask
-
-# Install dependencies from a list
-RUN pip install -r requirements.txt
+# Install Flask
+RUN pip3 install flask
 
 # Expose the application port
 EXPOSE 80
 
 # Start the application
-CMD ["flask", "run","--host","0.0.0.0","port","80"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
